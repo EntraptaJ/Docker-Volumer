@@ -1,13 +1,15 @@
 {
-  "name": "ts-core",
+  "name": "docker-volumer",
   "version": "0.0.1",
-  "description": "TS-Core is a github repo template for TypeScript Projects",
+  "description": "Docker-Volumer is a script to create NFS Docker volumes on SSH Hosts",
   "main": "src/index.ts",
   "type": "module",
   "private": true,
   "scripts": {
-    "test": "jest",
-    "start:debug": "node --loader @k-foss/ts-esnode --experimental-modules --harmony-optional-chaining --experimental-specifier-resolution=node --harmony-top-level-await ./src/index.ts"
+    "test": "echo TODO",
+    "prettier": "prettier --config .prettierrc --check \"src/**/*ts\"",
+    "lint": "eslint . --ext .js,.ts",
+    "start": "node --loader @k-foss/ts-esnode --experimental-modules --harmony-optional-chaining --experimental-specifier-resolution=node --harmony-top-level-await ./src/index.ts"
   },
   "dependencies": {
     "marked": "^1.0.0",
@@ -15,17 +17,16 @@
     "parse-markdown-table": "0.0.3"
   },
   "devDependencies": {
-    "@k-foss/ts-esnode": "1.3.1",
+    "@k-foss/ts-esnode": "^1.4.1",
     "@types/marked": "^0.7.4",
-    "@types/node": "13.9.5",
-    "@typescript-eslint/eslint-plugin": "2.26.0",
-    "@typescript-eslint/parser": "2.26.0",
+    "@types/node": "^14.0.5",
+    "@typescript-eslint/eslint-plugin": "^3.0.0",
+    "@typescript-eslint/parser": "^3.0.0",
     "dotenv": "^8.2.0",
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.10.1",
     "eslint-config-standard": "14.1.1",
     "eslint-plugin-import": "2.20.2",
-    "eslint-plugin-jest": "23.8.2",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-promise": "4.2.1",
@@ -35,20 +36,16 @@
     "typescript": "3.8.3"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "project": "./tsconfig.json",
       "tsconfigRootDir": "."
     },
-    "env": {
-      "jest/globals": true
-    },
     "plugins": [
       "@typescript-eslint",
-      "prettier",
-      "jest"
+      "prettier"
     ],
     "extends": [
       "standard",
@@ -65,7 +62,6 @@
           "varsIgnorePattern": "_.+"
         }
       ],
-      "@typescript-eslint/camelcase": "warn",
       "@typescript-eslint/no-var-requires": "warn",
       "@typescript-eslint/no-object-literal-type-assertion": "off",
       "@typescript-eslint/explicit-function-return-type": "off",
