@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "marked": "^1.1.0",
-    "node-ssh": "^9.0.0",
+    "node-ssh": "^10.0.2",
     "parse-markdown-table": "0.0.3"
   },
   "devDependencies": {
