@@ -1,11 +1,29 @@
 // src/index.ts
+import { connectHost, createNFSVolume } from './Library/SSH';
+import { getHosts } from './Utils/Host';
+import { getVolumes } from './Utils/Volumes';
 
-async function sayHello(name = 'John'): Promise<void> {
-  console.log(`Hello ${name}!`);
+if (process.env.NODE_ENV !== 'production') {
+  const { default: dotenv } = await import('dotenv');
+
+  dotenv.config();
+
+  console.log(process.env);
 }
 
-console.log(`Starting TS-Core`);
+const [hosts, volumes] = await Promise.all([getHosts(), getVolumes()]);
 
-await sayHello('K-FOSS');
+for (const host of hosts) {
+  const ssh = await connectHost(host);
+
+  for (const volume of volumes) {
+    const result = await createNFSVolume(ssh, volume);
+
+    console.log('Created volume', result);
+  }
+
+  console.info('Done everything');
+  ssh.dispose();
+}
 
 export {};

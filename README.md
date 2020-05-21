@@ -1,13 +1,26 @@
-# K-FOSS/TS-Core Repository Template
+# KristianFJones/Docker-Volumer
 
-This is a TypeScript project template.
+This is a script that SSHes into the hosts in a markdown table, and creates the volumes listed in another Markdown table.
 
 ## Usage
 
-On the GitHub Website click "Use this template"
+Create two markdown files.
 
-Once you have cloned the template locally search and replace and usage of TS-Core with the name of your new project
+### Exmaple Volumes Table
 
-## Development
+```
+|    Volume    |  NFS Server  |                          Path                          | Notes |
+| :----------: | :----------: | :----------------------------------------------------: | :---: |
+| NFSDownloads | 192.168.1.21 |  /mnt/site1.pool1/Site1.Pool1.Files/Files/JDownloader  |       |
+|    AriaNG    | 192.168.1.21 | /mnt/site1.pool1/Site1.Pool1.Docker.KJDev1/Data/AriaNg |       |
+```
 
-This template is designed to be developed within a VSCode Remote Container. When you open is VSCode you should get a notification prompting to reopen in container.
+### Example Hosts Table
+
+```
+| Hostname      |
+| ------------- |
+| 192.168.1.166 |
+| 192.168.1.167 |
+| 192.168.1.168 |
+```

@@ -1,5 +1,5 @@
 {
-  "name": "TS-Core Container",
+  "name": "Docker-Volumer Container",
   "dockerFile": "./Dockerfile.dev",
   "settings": {
     // This dev container does include /bin/bash if you prefer to use it instead of ash.
@@ -10,12 +10,19 @@
     "SHELL": "/bin/sh"
   },
 
-  "extensions": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint"],
+  "extensions": [
+    "ms-vsonline.vsonline",
+    "GitHub.vscode-pull-request-github",
+    "MS-vsliveshare.vsliveshare",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "visualstudioexptteam.vscodeintellicode"
+  ],
   "remoteUser": "node",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
   "workspaceFolder": "/workspace",
   "mounts": [
-    "source=ts-core-modules,target=/workspace/node_modules,type=volume"
+    "source=docker-volumer-modules,target=/workspace/node_modules,type=volume"
   ],
   "postCreateCommand": "sudo chown node node_modules && npm i"
 }
