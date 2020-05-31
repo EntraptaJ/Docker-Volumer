@@ -17,7 +17,7 @@
     "parse-markdown-table": "0.0.3"
   },
   "devDependencies": {
-    "@k-foss/ts-esnode": "^1.4.1",
+    "@k-foss/ts-esnode": "^1.6.0",
     "@types/marked": "^0.7.4",
     "@types/node": "^14.0.5",
     "@typescript-eslint/eslint-plugin": "^3.0.0",
