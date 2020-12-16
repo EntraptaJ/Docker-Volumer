@@ -12,7 +12,7 @@
     "start": "node --loader @k-foss/ts-esnode --experimental-modules --harmony-optional-chaining --experimental-specifier-resolution=node --harmony-top-level-await ./src/index.ts"
   },
   "dependencies": {
-    "marked": "^1.1.0",
+    "marked": "^1.2.7",
     "node-ssh": "^10.0.2",
     "parse-markdown-table": "0.0.3"
   },
